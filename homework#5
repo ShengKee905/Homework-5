@@ -1,0 +1,71 @@
+import numpy as np
+
+#1. Hey Twin -----------------------------------------------------------------------------------------------------
+arr = np.array( [ [ 1 , 1 , 1 ] , [ 1 , 2 , 3 ] , [ 2 , 2 , 2 ] ] )
+
+def findEqual(arr):
+    equal_arr = []
+    for row in arr:
+        count = 0
+        for i in row:
+            if i == row[0]:
+                count += 1
+        if count == len(row):
+            equal_arr.append(row)
+    return equal_arr
+
+print("Answer #1: ")
+print(findEqual(arr))   
+   
+    #while i < len(arr):
+        #if np.all(arr[n] == arr[0]) == True:
+        #    equal_arr.append(arr[n])
+        #n += 1
+        #i +=1
+    #return equal_arr
+
+#print(np.all(arr))
+
+#print(np.unique(arr, return_counts = True))
+##  returns "(array([1, 2, 3]), array([4, 4, 1], dtype=int64))"
+
+#print(np.all(arr == 2))
+##  returns "True"
+
+#2. Checkers --------------------------------------------------------------------------------------------------
+
+def checkerboard():
+    return np.indices((8,8)).sum(axis = 0) % 2
+
+print("Answer #2: ")
+print(checkerboard())
+
+#x = np.arange(20).reshape(2,10)
+#print(x)
+#what does dtype do?
+#   defines what type of output you're getting
+
+#3. I need some space ----------------------------------------------------------------------------------------
+
+myarr = np.array(['python', 'is', 'cool'])
+
+def spaceBetween(myarr):
+    return np.char.join(" ", myarr)
+
+print("Answer #3: ")
+print(spaceBetween(myarr))  
+
+#4. Everything is in order ---------------------------------------------------------------------------------------
+
+np.random.seed(12345)
+a = np.random.randint(1,50, (4,5))
+
+print("Answer #4:")
+print("Random array:")
+print(a)
+
+def sorting(a):
+    return np.sort(a, axis = 0)
+
+print("Array sorted along column:")
+print(sorting(a))
